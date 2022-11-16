@@ -3,14 +3,14 @@
     public class Ganho
     {
         public int GanhoId { get; set; }
-        public string GanhoDescricao { get; set; }
-        public double GanhoValor { get; set; }
-        public int CategoriaId { get; set; }
+        public string Description { get; set; }
+        public double Price { get; set; }
+        public int CategoryId { get; set; }
         public Categoria Categoria { get; set; }
-        public int Dia { get; set; }
+        public int Day { get; set; }
         public int MesId { get; set; }
         public Mes Mes { get; set; }
-        public int Ano { get; set; }
+        public int Year { get; set; }
         public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 

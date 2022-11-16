@@ -6,11 +6,11 @@ namespace ControleFinanceiro.BLL.Models
 {
     public class Cartao
     {
-        public int CartaoId { get; set; }
-        public string CartaoNome { get; set; }
-        public string CartaoBandeira { get; set; }
-        public string CartaoNumero { get; set; }
-        public double CartaoLimite { get; set; }
+        public int CardId { get; set; }
+        public string CardName { get; set; }
+        public string Banner { get; set; }
+        public string Number { get; set; }
+        public double Limit { get; set; }
         public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
         public virtual ICollection<Despesa> Despesas { get; set; }

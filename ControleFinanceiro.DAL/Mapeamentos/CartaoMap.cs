@@ -11,13 +11,13 @@ namespace ControleFinanceiro.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Cartao> builder)
         {
-            builder.HasKey(c => c.CartaoId);
-            builder.Property(c => c.CartaoNome).IsRequired().HasMaxLength(20);
-            builder.HasIndex(c => c.CartaoNome).IsUnique();
-            builder.Property(c => c.CartaoBandeira).IsRequired().HasMaxLength(15);
-            builder.Property(c => c.CartaoNumero).IsRequired().HasMaxLength(30);
-            builder.HasIndex(c => c.CartaoNumero).IsUnique();
-            builder.Property(c => c.CartaoLimite).IsRequired();
+            builder.HasKey(c => c.CardId);
+            builder.Property(c => c.CardName).IsRequired().HasMaxLength(20);
+            builder.HasIndex(c => c.CardName).IsUnique();
+            builder.Property(c => c.Banner).IsRequired().HasMaxLength(15);
+            builder.Property(c => c.Number).IsRequired().HasMaxLength(30);
+            builder.HasIndex(c => c.Number).IsUnique();
+            builder.Property(c => c.Limit).IsRequired();
 
             builder.HasOne(c => c.Usuario).WithMany(c => c.Cartoes).HasForeignKey(c => c.UsuarioId).IsRequired().OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(c => c.Despesas).WithOne(c => c.Cartao);

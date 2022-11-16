@@ -12,7 +12,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
         public void Configure(EntityTypeBuilder<Funcao> builder)
         {
             builder.Property(f => f.Id).ValueGeneratedOnAdd();
-            builder.Property(f => f.FuncaoDescricao).IsRequired().HasMaxLength(50);
+            builder.Property(f => f.Description).IsRequired().HasMaxLength(50);
 
             builder.HasData(
                 new Funcao
@@ -20,14 +20,14 @@ namespace ControleFinanceiro.DAL.Mapeamentos
                     Id = Guid.NewGuid().ToString(),
                     Name = "Administrador",
                     NormalizedName = "ADMINISTRADOR",
-                    FuncaoDescricao = "Administrador do Sistema."
+                    Description = "Administrador do Sistema."
                 },
                 new Funcao
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Usuario",
                     NormalizedName = "USUARIO",
-                    FuncaoDescricao = "Usuario do sistema."
+                    Description = "Usuario do sistema."
                 });
 
             builder.ToTable("Funcoes");

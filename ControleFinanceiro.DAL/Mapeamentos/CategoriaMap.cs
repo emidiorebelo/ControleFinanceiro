@@ -11,9 +11,9 @@ namespace ControleFinanceiro.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            builder.HasKey(c => c.CategoriaId);
-            builder.Property(c => c.CategoriaNome).IsRequired().HasMaxLength(50);
-            builder.Property(c => c.CategoriaIcone).IsRequired().HasMaxLength(15);
+            builder.HasKey(c => c.CategoryId);
+            builder.Property(c => c.CategoryName).IsRequired().HasMaxLength(50);
+            builder.Property(c => c.Icon).IsRequired().HasMaxLength(15);
 
             builder.HasOne(c => c.Tipo).WithMany(c => c.Categorias).HasForeignKey(c => c.TipoId).IsRequired();
             builder.HasMany(c => c.Ganhos).WithOne(c => c.Categoria);

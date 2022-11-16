@@ -14,7 +14,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
             builder.Property(u => u.Id).ValueGeneratedOnAdd();
             builder.Property(u => u.UsuarioCPF).IsRequired().HasMaxLength(20);
             builder.HasIndex(u => u.UsuarioCPF).IsUnique();
-            builder.Property(u => u.UsuarioProfissao).IsRequired().HasMaxLength(30);
+            builder.Property(u => u.Profession).IsRequired().HasMaxLength(30);
 
             builder.HasMany(u => u.Cartoes).WithOne(u => u.Usuario).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(u => u.Despesas).WithOne(u => u.Usuario).OnDelete(DeleteBehavior.NoAction);

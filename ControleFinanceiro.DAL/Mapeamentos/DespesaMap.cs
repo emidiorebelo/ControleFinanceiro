@@ -11,14 +11,14 @@ namespace ControleFinanceiro.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Despesa> builder)
         {
-            builder.HasKey(d => d.DespesaId);
-            builder.Property(d => d.DespesaDescricao).IsRequired().HasMaxLength(50);
-            builder.Property(d => d.DespesaValor).IsRequired();
-            builder.Property(d => d.Dia).IsRequired();
-            builder.Property(d => d.Ano).IsRequired();
+            builder.HasKey(d => d.ExpenseId);
+            builder.Property(d => d.Description).IsRequired().HasMaxLength(50);
+            builder.Property(d => d.Price).IsRequired();
+            builder.Property(d => d.Day).IsRequired();
+            builder.Property(d => d.Year).IsRequired();
 
-            builder.HasOne(d => d.Cartao).WithMany(d => d.Despesas).HasForeignKey(d => d.DespesaId).IsRequired();
-            builder.HasOne(d => d.Categoria).WithMany(d => d.Despesas).HasForeignKey(d => d.CategoriaId).IsRequired();
+            builder.HasOne(d => d.Cartao).WithMany(d => d.Despesas).HasForeignKey(d => d.ExpenseId).IsRequired();
+            builder.HasOne(d => d.Categoria).WithMany(d => d.Despesas).HasForeignKey(d => d.CategoryId).IsRequired();
             builder.HasOne(d => d.Mes).WithMany(d => d.Despesas).HasForeignKey(d => d.MesId).IsRequired();
             builder.HasOne(d => d.Usuario).WithMany(d => d.Despesas).HasForeignKey(d => d.UsuarioId).IsRequired();
 
