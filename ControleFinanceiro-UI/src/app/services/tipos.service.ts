@@ -13,7 +13,7 @@ export class TiposService {
 
   constructor(private http: HttpClient) { }
 
-  PegarTodos() : Observable<Tipo[]>{
+  PegarTodos(): Observable<Tipo[]>{
 		return this.http.get<Tipo[]>(this.url);
   }
 }

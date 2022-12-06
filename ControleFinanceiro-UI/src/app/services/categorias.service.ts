@@ -8,7 +8,7 @@ const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json'
 	})
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,8 @@ export class CategoriasService {
 
 	PegarCategoriaId(categoriaId: number) : Observable<Categoria>{
 		const apiUrl = `${this.url}/${categoriaId}}`;
-		return this.http.get<Categoria>(apiUrl);
+		let retorno = this.http.get<Categoria>(apiUrl);
+		return retorno;
 	}
 
 	NovaCategoria(categoria: Categoria) : Observable<any> {

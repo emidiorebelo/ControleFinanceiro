@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-listagem-categorias',
   templateUrl: './listagem-categorias.component.html',
-  styleUrls: ['./listagem-categorias.component.css']
+  styleUrls: ['./listagem-categorias.component.css'],
 })
 export class ListagemCategoriasComponent implements OnInit {
 
@@ -17,6 +17,7 @@ export class ListagemCategoriasComponent implements OnInit {
   ngOnInit(): void {
 		this.categoriasService.PegarTodos().subscribe(resultado => {
 			this.categorias.data = resultado;
+			console.log(resultado)
 		})
 
 		this.displayedColumns = this.ExibirColunas();
