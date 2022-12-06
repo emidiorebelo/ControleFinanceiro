@@ -43,4 +43,8 @@ export class NovaCategoriaComponent implements OnInit {
 		});
 	}
 
+	VoltarListagem() : void{
+		this.router.navigate(['categorias/listagemcategorias']);
+	}
+
 }
