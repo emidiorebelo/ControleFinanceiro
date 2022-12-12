@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AtualizarCategoriaComponent } from './components/Categoria/atualizar-categoria/atualizar-categoria.component';
 
 
@@ -46,6 +47,7 @@ import { AtualizarCategoriaComponent } from './components/Categoria/atualizar-ca
 		MatDividerModule,
 		MatSelectModule,
 		MatGridListModule,
+		MatDialogModule,
   ],
   providers: [
    TiposService,
